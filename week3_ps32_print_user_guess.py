@@ -12,8 +12,8 @@ return output
 @author: Primary
 """
 
-secretWord = 'apple'
-lettersGuessed = []
+secretWord = 'c'
+lettersGuessed = ['a']
 # print(secretWord == letterGuessed)
 
 

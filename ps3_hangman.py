@@ -113,9 +113,48 @@ def hangman(secretWord):
       user has not yet guessed.
 
     Follows the other limitations detailed in the problem write-up.
+    
+    print("I have {0} apples and {1} pears".format(input(), input()))
     '''
     # FILL IN YOUR CODE HERE...
+    secretWord = 'som'
+    print('Welcome to the game Hangman!')
+    current_word = ''
+    print('I am thinking of a word that is', len(secretWord), 'letters long.')
 
+    lettersGuessed = []
+    i = 3
+    # print('outside', secretWord)
+    while i > 0 and (not isWordGuessed(secretWord, lettersGuessed)):
+        # print('true')
+        print('-----------')
+        print('You have', i, 'guesses left')
+        print('Available letters:', getAvailableLetters(lettersGuessed))
+
+        letter = input('Please guess a letter:')
+
+        if letter in lettersGuessed:
+            print('Oops! You\'ve already guessed that letter:', getGuessedWord(secretWord, lettersGuessed))
+        else:
+            lettersGuessed.append(letter)
+            # print(lettersGuessed)    
+            if letter in secretWord:
+                current_word = getGuessedWord(secretWord, lettersGuessed)
+                print('Good guess:', current_word)
+            else:
+                print('Oops! That letter is not in my word:', getGuessedWord(secretWord, lettersGuessed))
+                i = i - 1
+            
+
+    if current_word == secretWord:
+        print('-----------')
+        print('Congratulations, you won!')
+    else:
+        print('-----------')
+        print('Sorry, you ran out of guesses. The word was', secretWord, '.')
+
+
+        
 
 
 
@@ -125,5 +164,8 @@ def hangman(secretWord):
 # and run this file to test! (hint: you might want to pick your own
 # secretWord while you're testing)
 
-# secretWord = chooseWord(wordlist).lower()
-# hangman(secretWord)
+# loadWords()
+
+
+secretWord = chooseWord(wordlist).lower()
+hangman(secretWord)

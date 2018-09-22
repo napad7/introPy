@@ -8,27 +8,26 @@ Lowest Payment: 310/440/360
 """
 
 balance = 120
-annualInterestRate = 0.2
-montlyInterestRate = 0.2 / 12.0
+annualInterestRate = 0.0
 number = 0
 # minimum_monthly_payment = 10
-def guess(number):
-    number = number + 10
-    temp = number + temp
-    return temp
 
 
-def monthly_payment(balance):
-    guess_number = guess(number)
-    monthly_balance = balance
-    for i in range(1, 13):
-        monthly_balance = monthly_balance - guess_number
-        print(i, monthly_balance, guess_number)
+def monthlyPayment(balance, monthly_guess()):
+    month = 13
+    monthly_interest_rate = annualInterestRate / 12.0
+    updated_balance = balance
+    for i in range(1, month):
+        minimum_monthly_payment = calculated_guess
+        #print(i, 'minimum_monthly_payment', minimum_monthly_payment)
+        monthly_unpaid_balance = updated_balance - minimum_monthly_payment
+        #print(i, 'monthly_unpaid_balance', monthly_unpaid_balance)
+        updated_balance = monthly_unpaid_balance + (monthly_unpaid_balance * monthly_interest_rate)
+        #print(i, "Remaining balance: ", round(updated_balance, 2))
+    return round(updated_balance, 2)
 
-    return monthly_balance
-
-number = 0
-while (monthly_payment(balance) > 0):
-    guess(number)
-
+monthly_guess():
+    guess = guess + 10
+    send_guess = guess
+    return send_guess
     
